@@ -77,36 +77,39 @@ class Spec
      * @param string $field
      * @param string $newAlias
      * @param string $dqlAlias
-     *
+     * @param string $conditionType
+     * @param string $condition
      * @return Join
      */
-    public static function join($field, $newAlias, $dqlAlias = null)
+    public static function join($field, $newAlias, $dqlAlias = null, $conditionType = null, $condition = null)
     {
-        return new Join($field, $newAlias, $dqlAlias);
+        return new Join($field, $newAlias, $dqlAlias, $conditionType, $condition);
     }
 
     /**
      * @param string $field
      * @param string $newAlias
      * @param string $dqlAlias
-     *
+     * @param string $conditionType
+     * @param string $condition
      * @return LeftJoin
      */
-    public static function leftJoin($field, $newAlias, $dqlAlias = null)
+    public static function leftJoin($field, $newAlias, $dqlAlias = null, $conditionType = null, $condition = null)
     {
-        return new LeftJoin($field, $newAlias, $dqlAlias);
+        return new LeftJoin($field, $newAlias, $dqlAlias, $conditionType, $conditionType);
     }
 
     /**
      * @param string $field
      * @param string $newAlias
      * @param string $dqlAlias
-     *
+     * @param string $conditionType
+     * @param string $condition
      * @return InnerJoin
      */
-    public static function innerJoin($field, $newAlias, $dqlAlias = null)
+    public static function innerJoin($field, $newAlias, $dqlAlias = null, $conditionType = null, $condition = null)
     {
-        return new InnerJoin($field, $newAlias, $dqlAlias);
+        return new InnerJoin($field, $newAlias, $dqlAlias, $conditionType, $condition);
     }
 
     /**
@@ -141,8 +144,8 @@ class Spec
     }
 
     /**
-     * @param string      $field
-     * @param string      $order
+     * @param string $field
+     * @param string $order
      * @param string|null $dqlAlias
      *
      * @return OrderBy
@@ -208,7 +211,7 @@ class Spec
      */
 
     /**
-     * @param string      $field
+     * @param string $field
      * @param string|null $dqlAlias
      *
      * @return IsNull
@@ -219,7 +222,7 @@ class Spec
     }
 
     /**
-     * @param string      $field
+     * @param string $field
      * @param string|null $dqlAlias
      *
      * @return IsNotNull
@@ -233,7 +236,7 @@ class Spec
      * Make sure the $field has a value equals to $value.
      *
      * @param string $field
-     * @param mixed  $value
+     * @param mixed $value
      * @param string $dqlAlias
      *
      * @return In
@@ -245,7 +248,7 @@ class Spec
 
     /**
      * @param string $field
-     * @param mixed  $value
+     * @param mixed $value
      * @param string $dqlAlias
      *
      * @return Not
@@ -342,7 +345,7 @@ class Spec
 
     /**
      * @param string $value
-     * @param null   $dqlAlias
+     * @param null $dqlAlias
      *
      * @return InstanceOfX
      */
